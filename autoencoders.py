@@ -62,6 +62,7 @@ class Autoencoder:
         autoencoder=Autoencoder(*parameters)
         weights_path= os.path.join(save_folder, "weights.h5")
         autoencoder.load_weights(weights_path)
+        return autoencoder
         
     def _create_folder_if_it_doesnt_exist(self, folder):
         if not os.path.exists(folder):
