@@ -39,7 +39,7 @@ class Autoencoder:
         self.model.summary()
     
     def compile(self, learning_rate=0.0001):
-        optimizer= Adam(learning_rate==learning_rate)
+        optimizer= Adam(learning_rate=learning_rate)
         mse_loss = MeanSquaredError()
         self.model.compile(optimizer=optimizer, loss=mse_loss)
         
