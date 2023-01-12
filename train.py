@@ -3,7 +3,7 @@ from autoencoders import Autoencoder
 from keras.datasets import mnist
 LEARNING_RATE=0.0005
 BATCH_SIZE = 32
-EPOCHS= 20
+EPOCHS= 30
 
 def load_mnist():
     (x_train, y_train), (x_test, y_test)= mnist.load_data()
@@ -30,7 +30,7 @@ def train(x_train, learning_rate, batch_size, epochs):
 
 if __name__=='__main__':
     x_train, _, _, _= load_mnist()
-    autoencoder= train(x_train[:5000], LEARNING_RATE, BATCH_SIZE, EPOCHS)
+    autoencoder= train(x_train[:8000], LEARNING_RATE, BATCH_SIZE, EPOCHS)
     autoencoder.save("model")
     #autoencoder2 = Autoencoder.load("model")
     #autoencoder2.summary()
